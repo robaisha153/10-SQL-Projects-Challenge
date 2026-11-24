@@ -39,6 +39,3 @@ QuickBite is a food-delivery startup that delivers orders to customers in Lahore
   </a>
 </p>
 
-<p align="center">
-  <a href="https://robaisha153.github.io/10-SQL-Projects-Challenge/Case-Study-1-QuickBite/quickbite-dashboard.html"><b>👉 Open the interactive dashboard</b></a>
-</p>
