@@ -34,11 +34,11 @@ QuickBite is a food-delivery startup that delivers orders to customers in Lahore
 ## Dashboard
 
 <p align="center">
-  <a href="https://htmlpreview.github.io/?https://github.com/robaisha153/10-SQL-Projects-Challenge/blob/main/Case-Study-1-QuickBite/quickbite-dashboard.html">
-    <img src="quickbite-dashboard.png" width="100%" alt="QuickBite Dashboard">
+  <a href="https://robaisha153.github.io/10-SQL-Projects-Challenge/Case-Study-1-QuickBite/quickbite-dashboard.html">
+    <img src="https://github.com/user-attachments/assets/c9ffa868-6139-44de-b492-44cf89576886" width="100%" alt="QuickBite Dashboard">
   </a>
 </p>
 
 <p align="center">
-  <a href="https://htmlpreview.github.io/?https://github.com/robaisha153/10-SQL-Projects-Challenge/blob/main/Case-Study-1-QuickBite/quickbite-dashboard.html"><b>👉 Open the interactive dashboard</b></a>
+  <a href="https://robaisha153.github.io/10-SQL-Projects-Challenge/Case-Study-1-QuickBite/quickbite-dashboard.html"><b>👉 Open the interactive dashboard</b></a>
 </p>
