@@ -27,7 +27,9 @@ QuickBite is a food-delivery startup that delivers orders to customers in Lahore
 ---
 
 ## Question and Solution
-You can run these queries in PostgreSQL. The full script is in Quickbite_QnA.sql.
+Please join me in executing the queries using PostgreSQL. It would be great to work together on the questions! The full script is in Quickbite_QnA.sql.
+
+If you have any questions, reach out to me on LinkedIn.
 
 Step 0: Clean the data
 
@@ -69,6 +71,7 @@ Answer:
 Order 1004 lists Garlic Naan twice, so I built the view v_order_items_clean, which keeps one row per item in each order, and used it in every question below. I also checked the order statuses: there are 71 delivered and 8 cancelled orders, and 1 customer has never ordered.
 
 1. How much has each customer spent, including customers who never ordered?
+
 sql
 SELECT c.customer_id,
        c.customer_name,
@@ -114,7 +117,9 @@ customer_id	customer_name	total_spent
 20	Omar Farooq	0
 Sana Malik is the top spender with PKR 10,120, followed by Usman Tariq (8,620) and Hamza Ali (7,720).
 Omar Farooq has never placed an order, so he shows 0.
+
 2. What share of delivered orders arrived on time vs late, and by how many minutes on average?
+
 sql
 WITH delivered AS (
     SELECT order_id,
@@ -145,7 +150,9 @@ On time	48	67.6	-6.9
 Late	23	32.4	12.3
 67.6% of delivered orders (48) arrived on time, and on average they came 6.9 minutes early.
 32.4% (23 orders) were late, by 12.3 minutes on average.
+
 3. What is the best-selling item (by units) in each city?
+
 sql
 WITH item_sales AS (
     SELECT c.city,
@@ -180,7 +187,9 @@ Lahore	Beef Burger	10
 Islamabad: Pasta Alfredo leads with 19 units.
 Lahore: Beef Burger leads with 10 units.
 Karachi has a tie between Cold Drink and Fries at 8 units each, which is why DENSE_RANK() is used instead of ROW_NUMBER().
+
 4. Rider scorecard: how many deliveries did each rider make, how many were late, and who is worse than average?
+
 sql
 WITH delivered AS (
     SELECT order_id,
@@ -232,7 +241,9 @@ Rider Kashif	Lahore	8	1	12.5	39.1	OK
 Rider Adeel (Karachi) was late on all 10 deliveries (100%), with an average of 55.7 minutes per delivery.
 Rider Imran (Lahore) is the second-worst at 38.5% late, and the other four riders are at 25% or below.
 Adeel and Imran are the two riders flagged as worse than the overall average.
+
 5. Weekly delivered revenue and week-over-week % change
+
 sql
 WITH order_totals AS (
     SELECT order_id, SUM(quantity * unit_price) AS order_value
@@ -279,7 +290,9 @@ week_start	revenue	previous_week	wow_change_pct
 Revenue peaked in the week of 2026-09-21 at PKR 12,430.
 It then dropped for three weeks in a row, ending at PKR 990 for the week of 2026-10-26.
 The last week only has two days of data (26 and 27 October), so its drop is partly because the data ends there.
+
 6. Which customers ordered on 3 or more consecutive days?
+
 sql
 WITH order_days AS (
     SELECT DISTINCT customer_id, order_time::date AS order_day
@@ -315,7 +328,9 @@ customer_id	streak_start	streak_end	streak_days
 5	2026-10-20	2026-10-22	3
 6	2026-09-23	2026-09-25	3
 Three customers ordered 3 days in a row: customer 3 (Sana Malik, 6 to 8 September), customer 5 (Fatima Noor, 20 to 22 October) and customer 6 (Usman Tariq, 23 to 25 September).
+
 7. Of customers who placed a delivered order, what % ordered again within 30 days of their first order?
+
 sql
 WITH o AS (
     SELECT customer_id,
@@ -344,7 +359,9 @@ Answer:
 customers_with_an_order	reordered_within_30d	repeat_rate_pct
 19	15	78.9
 15 of the 19 customers who ordered came back within 30 days, a repeat rate of 78.9%.
+
 8. Split customers into 4 spending groups. How much revenue does each group bring?
+
 sql
 WITH order_totals AS (
     SELECT order_id, SUM(quantity * unit_price) AS order_value
@@ -389,7 +406,9 @@ spend_quartile	customers	revenue	pct_of_revenue
 The top 5 customers (group 1) bring 48.4% of all revenue (PKR 41,140).
 The bottom 4 customers (group 4) bring only 5.3%.
 This means almost half of QuickBite's revenue depends on a small group of customers.
+
 BONUS QUESTIONS
+
 Join All The Things
 
 Build one master view with everything about an order: customer, rider, order value, time taken and whether the delivery was on time.
@@ -429,6 +448,7 @@ order_id	customer_name	city	rider_name	order_time	order_status	order_value	minut
 1004	Daniyal Raza	Islamabad	Rider Waqas	2026-08-26 14:04	delivered	1810	28	On time	NULL
 1005	Bilal Ahmed	Karachi	Rider Shahid	2026-08-27 13:27	delivered	700	31	On time	WELCOME20
 1006	Zara Hussain	Lahore	Rider Kashif	2026-08-29 13:05	delivered	1410	47	Late	NULL
+
 Rank All The Things
 
 Number each customer's orders by date, with NULL for cancelled orders.
@@ -460,7 +480,6 @@ Bilal Ahmed	2026-09-22 16:15:00	delivered	2050	3
 Bilal Ahmed	2026-10-01 20:08:00	delivered	1500	4
 Bilal Ahmed	2026-10-06 23:44:00	delivered	1480	5
 Cancelled orders get NULL instead of a number, and each customer's numbering restarts at 1.
-
 ---
 ## Dashboard
 
