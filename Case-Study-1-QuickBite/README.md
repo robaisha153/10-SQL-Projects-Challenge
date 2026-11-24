@@ -21,8 +21,24 @@ QuickBite is a food-delivery startup that delivers orders to customers in Lahore
 
 ## Entity Relationship Diagram
 
-![QuickBite ERD](quickbite-erd.png)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c767e0e1-4dd7-43ff-86d6-92d4cd0326cc" width="100%" alt="QuickBite Entity Relationship Diagram">
+</p>
 ---
 
 ## Question and Solution
+
+*(Your questions and solutions go here.)*
+
+---
+## Dashboard
+
+<p align="center">
+  <a href="https://htmlpreview.github.io/?https://github.com/robaisha153/10-SQL-Projects-Challenge/blob/main/Case-Study-1-QuickBite/quickbite-dashboard.html">
+    <img src="quickbite-dashboard.png" width="100%" alt="QuickBite Dashboard">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://htmlpreview.github.io/?https://github.com/robaisha153/10-SQL-Projects-Challenge/blob/main/Case-Study-1-QuickBite/quickbite-dashboard.html"><b>👉 Open the interactive dashboard</b></a>
+</p>
